@@ -1,0 +1,195 @@
+<div class="signup-container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Learn to code by watching others</h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching
+        scripted tutorials is great, but understanding how developers think is
+        invaluable.
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <h2>
+        <strong>Try it free 7 days </strong>
+        then $20/mo. thereafter
+      </h2>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <!-- First Name Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input
+              id="firstName"
+              formControlName="firstName"
+              type="text"
+              placeholder=""
+              [ngClass]="{
+                error:
+                  signupForm.get('firstName')?.invalid &&
+                  signupForm.get('firstName')?.touched
+              }"
+            />
+            <svg
+              *ngIf="
+                signupForm.get('firstName')?.invalid &&
+                signupForm.get('firstName')?.touched
+              "
+              class="error-icon"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+              </g>
+            </svg>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('firstName')?.invalid &&
+              signupForm.get('firstName')?.touched
+            "
+            class="error-message"
+          >
+            <small>{{ getErrorMessage("firstName") }}</small>
+          </div>
+        </div>
+
+        <!-- Last Name Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input
+              id="lastName"
+              formControlName="lastName"
+              type="text"
+              placeholder=""
+              [ngClass]="{
+                error:
+                  signupForm.get('lastName')?.invalid &&
+                  signupForm.get('lastName')?.touched
+              }"
+            />
+            <svg
+              *ngIf="
+                signupForm.get('lastName')?.invalid &&
+                signupForm.get('lastName')?.touched
+              "
+              class="error-icon"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+              </g>
+            </svg>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('lastName')?.invalid &&
+              signupForm.get('lastName')?.touched
+            "
+            class="error-message"
+          >
+            <small>{{ getErrorMessage("lastName") }}</small>
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input
+              id="email"
+              formControlName="email"
+              type="email"
+              placeholder="email@example.com"
+              [ngClass]="{
+                error:
+                  signupForm.get('email')?.invalid &&
+                  signupForm.get('email')?.touched
+              }"
+            />
+            <svg
+              *ngIf="
+                signupForm.get('email')?.invalid &&
+                signupForm.get('email')?.touched
+              "
+              class="error-icon"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+              </g>
+            </svg>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('email')?.invalid &&
+              signupForm.get('email')?.touched
+            "
+            class="error-message"
+          >
+            <small>{{ getErrorMessage("email") }}</small>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <div class="input-container">
+            <input
+              id="password"
+              formControlName="password"
+              type="password"
+              placeholder=""
+              [ngClass]="{
+                error:
+                  signupForm.get('password')?.invalid &&
+                  signupForm.get('password')?.touched
+              }"
+            />
+            <svg
+              *ngIf="
+                signupForm.get('password')?.invalid &&
+                signupForm.get('password')?.touched
+              "
+              class="error-icon"
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#FF7979" cx="12" cy="12" r="12" />
+                <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+                <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+              </g>
+            </svg>
+          </div>
+          <div
+            *ngIf="
+              signupForm.get('password')?.invalid &&
+              signupForm.get('password')?.touched
+            "
+            class="error-message"
+          >
+            <small>{{ getErrorMessage("password") }}</small>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="signupForm.invalid">
+          CLAIM YOUR FREE TRIAL
+        </button>
+        <p class="terms">
+          By clicking the button, you are agreeing to our
+          <a href="#">Terms and Services</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
